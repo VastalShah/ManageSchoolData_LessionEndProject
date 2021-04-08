@@ -1,3 +1,4 @@
+using DataLayer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,6 +28,7 @@ namespace Manage_School_Data
             services.AddDbContext<MVC_Context>(item =>
                 item.UseSqlServer(Configuration.GetConnectionString("MVC_Context")));
             services.AddControllersWithViews();
+            services.AddTransient(typeof(IBaseRepository<>), typeof(BaseRepository<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

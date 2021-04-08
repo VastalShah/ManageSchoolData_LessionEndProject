@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -7,11 +8,8 @@ using System.Threading.Tasks;
 
 namespace Manage_School_Data.Models
 {
-    public class ClassesModel
+    public class ClassesModel : BaseModel
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
-
         [Required]
         public string Name { get; set; }
 
